@@ -5,7 +5,11 @@ This is the code of the paper *Identifying while Learning for Document Event Cau
 An *iterative Learning and Identifying Framework* (iLIF) for the document-level event causality identification.
 
 ## Overview
+
 ![iLIF](./figs/model.png)
+
+Illustration of the iterative learning and identifying framework (iLIF). Causality identification is based on events’ contextual text and causal graph representations. The event causality graph (ECG) is iteratively constructed to update events’ causal graph representations. The final ECG contains all identified causal relations as the output.
+
 ## Requirements
 
 - python==3.7.13
