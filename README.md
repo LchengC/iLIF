@@ -4,6 +4,8 @@ This is the code of the paper *Identifying while Learning for Document Event Cau
 
 An *iterative Learning and Identifying Framework* (iLIF) for the document-level event causality identification.
 
+## Overview
+
 ## Requirements
 
 - python==3.7.13
@@ -38,3 +40,5 @@ We provide a processed datasets: the EventStoryLine v0.9 for testing
 ## Acknowledgement
 
 We refer to the code of [HAN](https://github.com/Jhy1993/HAN). Thanks for their contributions.
+
+## Citation
