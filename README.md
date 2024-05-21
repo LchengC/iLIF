@@ -5,7 +5,7 @@ This is the code of the paper *Identifying while Learning for Document Event Cau
 An *iterative Learning and Identifying Framework* (iLIF) for the document-level event causality identification.
 
 ## Overview
-![Local Image](./figs/model.pdf)
+![iLIF](./figs/model.png)
 ## Requirements
 
 - python==3.7.13
