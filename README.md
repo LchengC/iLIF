@@ -1,6 +1,6 @@
 # Identifying while Learning for Document Event Causality Identification
 
-This is the code of the paper *Identifying while Learning for Document Event Causality Identification*. Accepted by ACL 2024.
+This is the code of the paper [*Identifying while Learning for Document Event Causality Identification*](https://export.arxiv.org/abs/2405.20608). Accepted by ACL 2024.
 
 An *iterative Learning and Identifying Framework* (iLIF) for the document-level event causality identification.
 
