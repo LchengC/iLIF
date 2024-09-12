@@ -45,7 +45,7 @@ class bertCSRModel(nn.Module):
         self.pretrained_model = BertModel.from_pretrained(args.model_name)
         self.mlp = nn.Sequential(nn.Linear(1 * args.n_last + 2 * embedding_size, args.mlp_size),
                                   nn.ReLU(), nn.Dropout(args.mlp_drop),
-                                  nn.Linear(args.mlp_size, 3))
+                                  nn.Linear(args.mlp_size, args.no_of_classes))
         self.rate = args.rate
         self.w = args.w
         self.max_iteration = args.max_iteration + 1
