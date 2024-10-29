@@ -1,14 +1,36 @@
 import torch
 import random
 import numpy as np
+import os
 
+# def setup_seed(seed):
+#     random.seed(seed)
+#     np.random.seed(seed)
+#     torch.manual_seed(seed)
+#     torch.cuda.manual_seed(seed)
+#     torch.cuda.manual_seed_all(seed)
 def setup_seed(seed):
+    # seed init.
     random.seed(seed)
     np.random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+
+    # torch seed init.
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
+    torch.cuda.manual_seed_all(seed) # if you are using multi-GPU.
 
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.enabled = False # train speed is slower after enabling this opts.
+
+    # https://pytorch.org/docs/stable/generated/torch.use_deterministic_algorithms.html
+    # CUDA版本高的话需要加这个才能保证训练一致性
+    #os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':16:8' #性能会降低
+    os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8' #增加内存消耗
+    # avoiding nondeterministic algorithms (see https://pytorch.org/docs/stable/notes/randomness.html)
+    torch.use_deterministic_algorithms(True,warn_only=False) #可以被这个语句检查出来 需要设置CUBLAS_WORKSPACE_CONFIG
+    #warn_only=True 之后不报错，有多卡 gather函数等情况时训练无法复现
 
 def compute_f1(gold, predicted, logger):
     c_predict = 0

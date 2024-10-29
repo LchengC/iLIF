@@ -1,6 +1,6 @@
 # Identifying while Learning for Document Event Causality Identification
 
-This is the code of the paper [*Identifying while Learning for Document Event Causality Identification*](https://export.arxiv.org/abs/2405.20608). Accepted by ACL 2024.
+This is the code of the paper [*Identifying while Learning for Document Event Causality Identification*](https://aclanthology.org/2024.acl-long.210/). Accepted by ACL 2024.
 
 An *iterative Learning and Identifying Framework* (iLIF) for the document-level event causality identification.
 
@@ -17,7 +17,7 @@ Illustration of the *iterative Learning and Identifying Framework* (**iLIF**). C
 - numpy==1.21.5
 - scikit-learn==1.0.2
 - scipy==1.7.3
-- torch==1.11.0
+- torch==1.13.0
 - torch_scatter==2.0.9
 - torch_geometric==2.1.0.post1
 - tqdm==4.64.1
@@ -42,6 +42,4 @@ We provide a processed datasets: the EventStoryLine v0.9 for testing
 
 ## Acknowledgement
 
-We refer to the code of [HAN](https://github.com/Jhy1993/HAN). Thanks for their contributions.
-
-## Citation
+We would like to extend our sincere gratitude to [lyj963](https://github.com/lyj963) for his contributions to enhancing the determinacy modifications in model training. We refer to the code of [HAN](https://github.com/Jhy1993/HAN). Thanks for their contributions.

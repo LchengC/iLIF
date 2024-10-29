@@ -9,7 +9,8 @@ from torch_geometric.nn.dense import Linear
 from torch_geometric.nn.inits import glorot, reset
 from torch_geometric.typing import Adj, EdgeType, Metadata, NodeType
 from torch_geometric.utils import softmax
-
+from torch_sparse import SparseTensor
+import torch_geometric.transforms as TOsparese
 
 def group(xs: List[Tensor], beta_1, beta_2) -> Optional[Tensor]:
     if len(xs) == 0:
@@ -124,6 +125,10 @@ class CGEConv(MessagePassing):
 
         # Iterate over edge types:
         for edge_type, edge_index in edge_index_dict.items():
+            """#将edge_index改成sparsetensor来保证确定性,感谢(https://github.com/lyj963)的修改"""
+            edge_index = SparseTensor(row=edge_index[0], col=edge_index[1], value=None,
+                                      sparse_sizes=(x.shape[0], x.shape[0]))  # 将edge_index改成sparsetensor来保证确定性
+            """#将edge_index改成sparsetensor来保证确定性"""
             src_type, _, dst_type = edge_type
             edge_type = '__'.join(edge_type)
             lin_src = self.lin_src[edge_type]
