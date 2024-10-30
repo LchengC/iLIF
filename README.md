@@ -11,7 +11,7 @@ Illustration of the *iterative Learning and Identifying Framework* (**iLIF**). C
 
 ## Requirements
 
-- python==3.7.13
+- python==3.7
 - transformers==4.15.0
 - matplotlib==3.5.3
 - numpy==1.21.5
@@ -21,6 +21,7 @@ Illustration of the *iterative Learning and Identifying Framework* (**iLIF**). C
 - torch_scatter==2.0.9
 - torch_geometric==2.1.0.post1
 - tqdm==4.64.1
+- torch_sparse
 
 ## Usage
 
