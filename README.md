@@ -17,7 +17,7 @@ Illustration of the *iterative Learning and Identifying Framework* (**iLIF**). C
 - numpy==1.21.5
 - scikit-learn==1.0.2
 - scipy==1.7.3
-- torch==1.13.0
+- torch==1.13.1
 - torch_scatter==2.0.9
 - torch_geometric==2.1.0.post1
 - tqdm==4.64.1
